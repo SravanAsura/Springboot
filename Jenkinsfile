@@ -19,7 +19,13 @@ pipeline
         stage("CodeQuality-Sonar")
         {
             steps{
-            sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:2.8.1:sonar"
+                
+                withSonarQubeEnv('Sonar')
+                {
+                    script{
+                     sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:2.8.1:sonar"
+                    }
+                }
             }
         }
     }
