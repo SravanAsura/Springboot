@@ -22,9 +22,7 @@
         
 
     </dependencies>
-  <name>SonarQube Scanner for Maven</name>
-  <description>Trigger SonarQube analysis on Maven projects</description>
-  <url>http://sonarsource.github.io/sonar-scanner-maven/</url>
+  
     <properties>
         <java.version>1.8</java.version>
         <sonar.host.url>http://http://13.233.30.76:9000/</sonar.host.url>
