@@ -26,7 +26,8 @@ pipeline
                 
                 withSonarQubeEnv(installationName:'sonar-8',credentialsId:'Sonar-Token')
                 {
-                    sh"${tool {"sonar-scanner"}}"
+                   // sh"${tool {"sonar-scanner"}}"
+                    sh "mvn sonar:sonar"
                 //  script{
                      //sh "mvn sonar:sonar"
                    // }
