@@ -24,7 +24,7 @@ pipeline
         {
             steps{
                 
-                withSonarQubeEnv(installationName:'sonar-scanner',credentialsId:'Sonar-Token')
+                withSonarQubeEnv(installationName:'sonar',credentialsId:'Sonar-Token')
                 {
                     sh"${tool {"sonar-scanner"}}"
                 //  script{
