@@ -28,7 +28,28 @@
         <sonar.host.url>http://3.6.94.242:9000/</sonar.host.url>
        
     </properties>
-
+<profile>
+  <id>only-eclipse</id>
+  <activation>
+    <property>
+      <name>m2e.version</name>
+    </property>
+  </activation>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            ...
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</profile>
 
     <build>
         <plugins>
