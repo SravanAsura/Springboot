@@ -23,7 +23,7 @@ pipeline
                 withSonarQubeEnv('Sonar')
                 {
                     script{
-                     sh "mvn /usr/share/apache-maven/bin/mvn:sonar"
+                     sh "mvn /usr/share/apache-maven/bin/mvn sonar:sonar"
                     }
                 }
             }
