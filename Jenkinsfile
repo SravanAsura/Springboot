@@ -1,6 +1,10 @@
 pipeline
 {
     agent any
+    tools
+    {
+        maven "Maven"
+    }
    
     stages
     {
@@ -20,11 +24,12 @@ pipeline
         {
             steps{
                 
-                withSonarQubeEnv('Sonar')
+                withSonarQubeEnv(installationName:'sonar-scanner',credentialsId:'Sonar-Token')
                 {
-                    script{
-                     sh "mvn sonar:sonar"
-                    }
+                    sh"${tool {"sonar-scanner"}}"
+                //  script{
+                     //sh "mvn sonar:sonar"
+                   // }
                 }
             }
         }
