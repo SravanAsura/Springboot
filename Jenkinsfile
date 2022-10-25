@@ -8,12 +8,7 @@ pipeline
    
     stages
     {
-        stage("Git-clone")
-        {
-            steps{
-            git'https://github.com/SravanAsura/Springboot.git'
-            }
-        }
+      
         stage("Build-Maven")
         {
             steps{
