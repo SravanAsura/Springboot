@@ -26,7 +26,7 @@ pipeline
         {
             steps{
                 script{
-                       sh "cp -r ../Jenkins-Docker/target ."
+                       
                        sh "docker build . -t sravanasura/javaapp:Docker_tag"
                        withCredentials([string(credentialsId: 'Docker_Pass', variable: 'docker_pass')]) {
                         sh "docker login -u sravanasura -p $docker_pass"
