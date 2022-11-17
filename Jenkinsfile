@@ -29,7 +29,7 @@ pipeline
                 script{
                        
                        sh "docker build . -t sravanasura/javaapp:$Docker_tag"
-                       withCredentials([string(credentialsId: 'Docker_Pass', variable: 'docker_pass')]) {
+                       withCredentials([string(credentialsId: 'dockerpass', variable: 'DockerPass')]) {
                         sh "docker login -u sravanasura -p $docker_pass"
                          sh "docker push sravanasura/javaapp:$Docker_tag"
                           sh "docker run -d -p 6000:5000 sravanasura/javaapp:$Docker_tag"
