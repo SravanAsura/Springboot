@@ -32,7 +32,7 @@ pipeline
                        withCredentials([string(credentialsId: 'dockerpass', variable: 'DockerPass')]) {
                         sh "docker login -u sravanasura -p $DockerPass"
                          sh "docker push sravanasura/javaapp:$Docker_tag"
-                          sh "docker run -d -h 13.232.240.170 -u ec2-user -p 6000:5000 sravanasura/javaapp:$Docker_tag"
+                          sh "docker run -d -h 13.232.240.170 -p 6000:5000 sravanasura/javaapp:$Docker_tag"
                          
     
                         }
